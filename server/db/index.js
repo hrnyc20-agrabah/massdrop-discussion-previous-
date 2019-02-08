@@ -93,9 +93,11 @@ db.serialize(function () {
 })
 
 
-db.close((err) => {
-    if (err) {
-        console.log(err, 'something is wrong closing')
-    }
-    console.log('Close the database connection.');
-});
+// db.close((err) => {
+//     if (err) {
+//         console.log(err, 'something is wrong closing')
+//     }
+//     console.log('Close the database connection.');
+// });
+
+module.exports = db
