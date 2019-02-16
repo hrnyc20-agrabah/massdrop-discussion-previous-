@@ -40,8 +40,6 @@ db.serialize(function () {
         return rand
     }
 
-
-
     function usersf() {
         // var users = db.each("SELECT id FROM user", (err, row) => { console.log(row) })
         var users = [908, 325, 618, 555, 259, 821, 400, 740, 180, 815]

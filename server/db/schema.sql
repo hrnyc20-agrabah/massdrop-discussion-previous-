@@ -18,8 +18,7 @@ CREATE TABLE `user`
 (
   `id` INTEGER DEFAULT NULL,
 --  `id` INTEGER PRIMARY KEY,
-  `username` VARCHAR
-(200) NULL DEFAULT NULL,
+  `username` VARCHAR(200) NULL DEFAULT NULL,
   `avatar` BLOB NULL DEFAULT NULL
   -- PRIMARY KEY (`id`)
 );
@@ -79,7 +78,8 @@ CREATE TABLE `messages`
   `createdAt` DATETIME NULL DEFAULT NULL,
   `body` VARCHAR
 (1000) NULL DEFAULT NULL,
-  `sending_user_id` INTEGER NULL DEFAULT NULL
+  `sending_user_id` INTEGER NULL DEFAULT NULL,
+  `like_count` INTEGER NULL DEFAULT NULL
   -- PRIMARY KEY (`id`)
   -- FOREIGN KEY (thread_id) REFERENCES `thread` (`id`),
   -- FOREIGN KEY (sending_user_id) REFERENCES `user` (`id`)

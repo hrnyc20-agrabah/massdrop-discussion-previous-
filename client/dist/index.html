@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Lato:100,300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="generic.css"> -->
+
+    <!-- <link rel="stylesheet" href="iconFonts.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>    
+    <link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <script type="text/javascript" charset="utf-8" async="" src="https://cdn1.massdrop.com/dist/client-quill-3c9607f9ad5ce4b3ddae.js"></script>
+</head>
+<body>
+    
+
+    <div class="container">
+        <!-- Comment Thread -->
+        <div class="container container-comment">
+             <div class="row row-comment">
+                 <!-- comment__field_main comment_field--new -->
+                <div class="col-1 avatar_wrapper">
+                    <div class="avatar_wrapper_img">
+                        <img alt class="avatar" src="http://s3.amazonaws.com/37assets/svn/765-default-avatar.png" >
+                    </div>
+                </div>
+                <div class="col-11">
+                    <div class="flexItem comment_field_main">
+                        <div class="comment__edit comment__editor--new">
+                            <div class="row row--comment__editor">
+                                <div class="rich_content_editor text_editor">
+                                    <div id="toolbar"></div>
+                                    <div id="editor"></div> 
+                                </div>
+                            </div>
+                            <div class="row row--comment_field_footer">
+                                <button type="button" class="button button--small button--blue button--solid button--disabled" disabled="">Submit</button>
+                                <button type="button" class="button button--small button--ghost button--bare">Cancel</button>
+                            </div>
+                        </div>              
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <div class="container container-search">
+            <div class="row">
+                <div class="col">
+                    column 1 
+                </div>
+                <div class="col">
+                    column 2
+                </div>
+            </div>
+        </div>  
+
+        <div class="container container-threads">
+            
+        </div>
+    </div>
+    
+    
+    </div>
+
+
+          
+    <script>
+        var toolbarOptions = [ 
+            ['bold', 'italic','underline','strike'],
+            [{'list':'ordered'},{'list':'bullet'}],
+            ['link', 'image']
+
+        ];
+        var quill = new Quill('#editor', {
+            modules: {
+                'data-placeholder': 'Add a comment...',
+                toolbar: toolbarOptions,
+                'image-tooltip': true,
+                'link-tooltip': true
+            },
+            theme: 'snow'
+        });
+
+        var customButton = document.querySelector('#custom-button');
+        customButton.addEventListener('click', function() {
+        console.log('Clicked!');
+        });
+
+
+    </script>
+
+
+</body>
+
+
+</html>
