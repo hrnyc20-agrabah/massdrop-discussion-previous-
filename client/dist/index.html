@@ -2,40 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="en">
-    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Lato:100,300,400,700,900" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="iconFonts.css">
+    <link rel="stylehseet" href="index.css">
+    <link rel="stylesheet" href="https://cdn1.massdrop.com/dist/client-app-7af617fa5732f1d47420f02f320a3145-compressed.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Lato:100,300,400,700,900" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
     <script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>    
     <link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Gorditas" rel="stylesheet">
-    <script type="text/javascript">
-        $('.enter-text-button').hover(()=> {
-            $(this).css('cursor','pointer')
-        })
-
-    </script>
 </head>
 <body>
-    
-
     <div class="container">
         <!-- Comment Thread -->
         <div class="container container-comment">
              <div class="row row-comment">
                  <!-- comment__field_main comment_field--new -->
-                <div class="col-1 avatar_wrapper">
+                <div class="column avatar_wrapper">
                     <div class="avatar_wrapper_img">
                         <img alt class="avatar" src="http://s3.amazonaws.com/37assets/svn/765-default-avatar.png" >
                     </div>
                 </div>
-                <div class="col-11">
+                <div class="col">
                     <div class="flexItem comment_field_main">
-                        <span class="input-section enter-text-button">
+                        <!-- <span class="input-section enter-text-button">
                             Add a comment...
-                        </span>
-                        <!-- <span class="comment_edit comment_editor-new">
+                        </span> -->
+                        <div class="comment_edit comment_editor-new">
                             <div class="row row-comment_editor">
                                 <div class="rich_content_editor text_editor">
                                     <div id="toolbar"></div>
@@ -45,15 +41,17 @@
                             <div class="row row--comment_field_footer">
                                 <button type="button" class="button button--small button--blue button--solid button--disabled" disabled="">Submit</button>
                                 <button type="button" class="button button--small button--ghost button--bare">Cancel</button>
-                            </div>
-                        </span>               -->
+                            </div>   
+                        </div>   
+                                
                     </div>
+                    
                 </div>
             </div>
         </div> 
-        <div class="container container-search">
-            <div class="row">
-                <div class="col-6">
+        <div class="container-search">
+            <div class="row row-search">
+                <div class="col-4">
                     <div class="discussion_search ">
                         <input type="text" name="search" id="discussion_search_field" placeholder="Search this discussion" autocomplete="off" class="discussion_search_field form_text_field" value="">
                         <label class="site_search_icon_label">
@@ -61,26 +59,217 @@
                         </label>
                     </div>
                 </div>
-                <div class="col-6">
-                    <div class="discussion__sort_dropdown discussion__sort_dropdown">
-                        <div class="sort_dropdown communities__filter2--hide-mobile">
-                            <div class="Menu communities__filter2">
-                                <div class="Menu__MenuTrigger Menu__MenuTrigger__inactive communities__filter2--current link_button--primary" tabindex="0" role="button" aria-owns="communities_filter_menu" aria-haspopup="true">
-                                    <span class="sort_by">SORT BY:</span>
-                                    <span class="filter_name">Newest</span>
-                                    <span class="icon_container">
-                                        <i class="icon-down-open icon"></i>
-                                    </span>
+                <div class="col-4"></div>
+                <div class="col-4 sort__by">
+                        <div class="discussion__sort_dropdown discussion__sort_dropdown">
+                            <div class="sort_dropdown">
+                                <div class="Menu communities__filter2">
+                                    <div class="Menu__MenuTrigger Menu__MenuTrigger__inactive communities__filter2--current link_button--primary" tabindex="0" role="button" aria-owns="communities_filter_menu" aria-haspopup="true">
+                                        <span class="sort_by">SORT BY:</span>
+                                        <span class="filter_name">Newest</span>
+                                        <span class="icon_container">
+                                            <i class="icon-down-open icon"></i>
+                                        </span>
+                                    </div>
+                                    <div id="communities_filter_menu" role="menu" tabindex="-1" aria-expanded="false" class="Menu__MenuOptions communities__filter2_list dropdown__menu dropdown__menu--active communities__filter2_list_full_width Menu__MenuOptions--horizontal-right Menu__MenuOptions--vertical-bottom" style="display: none;">
+                                        <div class="Menu__MenuOption communities__filter2_item dropdown__menu_item communities__filter2_item--selected Menu__MenuOption--active" role="menuitem" tabindex="-1">
+                                            <span class="dropdown_menu__display">Newest</span>
+                                        </div>
+                                        <div class="Menu__MenuOption communities__filter2_item dropdown__menu_item" role="menuitem" tabindex="-1">
+                                            <span class="dropdown_menu__display">Top Conversations</span>
+                                        </div>
+                                        <div class="Menu__MenuOption communities__filter2_item dropdown__menu_item" role="menuitem" tabindex="-1">
+                                            <span class="dropdown_menu__display">Latest Reply</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div id="communities_filter_menu" role="menu" tabindex="-1" aria-expanded="false" class="Menu__MenuOptions communities__filter2_list dropdown__menu dropdown__menu--active communities__filter2_list_full_width Menu__MenuOptions--horizontal-right Menu__MenuOptions--vertical-bottom" style="display: none;">
-                                    <div class="Menu__MenuOption communities__filter2_item dropdown__menu_item communities__filter2_item--selected Menu__MenuOption--active" role="menuitem" tabindex="-1">
-                                        <span class="dropdown_menu__display">Newest</span>
+                            </div>
+                        </div>
+                    
+                </div>
+            </div>
+        </div>  
+
+
+        <div class="discussion_content">
+            <div class="discussion">
+                <div class="infinite_scroller">
+                    <!-- based on sort-by -->
+                    <div class="discussionTop">
+                        <div class="outer_col">
+                            <div class="card card--conversation no_padding col" name="conversation_card_column">
+                                <div class="conversation conversation--empty">
+                                    <!-- comment-1634590 is profile  -->
+                                    <div name="comment-1634590">
+                                        <div class="comment__wrapper comment--root comment--employee">
+                                            <div class="content_card comment">
+                                                <a href="/profile/richardgao" class="links links--normal links--with_text links--text_only avatar__wrapper_link--root">
+                                                    <div class="avatar__wrapper comment_owner__avatar--large">
+                                                        <img alt="" class="responsive responsive_avatar" src="https://massdrop-s3.imgix.net/img_profile/3tX74Z6S1Kr9zsnBF2CK_IMG_0418.JPG?auto=format&amp;fm=jpg&amp;fit=crop&amp;w=40&amp;h=40&amp;dpr=1" srcset="https://massdrop-s3.imgix.net/img_profile/3tX74Z6S1Kr9zsnBF2CK_IMG_0418.JPG?auto=format&amp;fm=jpg&amp;fit=crop&amp;w=40&amp;h=40&amp;dpr=1 1x, https://massdrop-s3.imgix.net/img_profile/3tX74Z6S1Kr9zsnBF2CK_IMG_0418.JPG?auto=format&amp;fm=jpg&amp;fit=crop&amp;w=40&amp;h=40&amp;dpr=2 2x, https://massdrop-s3.imgix.net/img_profile/3tX74Z6S1Kr9zsnBF2CK_IMG_0418.JPG?auto=format&amp;fm=jpg&amp;fit=crop&amp;w=40&amp;h=40&amp;dpr=3 3x">
+                                                    </div>
+                                                </a>
+                                                <div class="comment__main">
+                                                    <div class="flexItem flexContainer wd_alignItems--center d_alignItems--center wt_alignItems--center nt_alignItems--center p_alignItems--center wd_flexWrap--nowrap d_flexWrap--nowrap wt_flexWrap--nowrap nt_flexWrap--nowrap p_flexWrap--nowrap row--comment_header">
+                                                        <div class="flexItem flexContainer user user--link user--all user--employee comment__owner_details">
+                                                            <a href="/profile/richardgao" class="links links--normal links--with_text links--text_only"></a>     
+                                                            <div class="flexItem">
+                                                                <div class="flexItem flexContainer wd_flexWrap--nowrap d_flexWrap--nowrap wt_flexWrap--nowrap nt_flexWrap--nowrap p_flexWrap--nowrap user__info--main">
+                                                                    <div class="flexItem wd_flexGrow--0 d_flexGrow--0 wt_flexGrow--0 nt_flexGrow--0 p_flexGrow--0 username__container">
+                                                                        <a href="/profile/richardgao" class="links links--normal links--with_text links--text_only username">
+                                                                        <span class="links__text">richardgao</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <span class="tag user__endorsements">829</span>
+                                                                    <button type="button" class="follow_button button button--small button--blue button--bare">
+                                                                     <i class="icon icon-follow"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="comment__misc_info_actions">
+                                                            <time class="timestamp comment__timestamp" datetime="2017-03-23T23:55:35.000Z" title="2017-03-23T23:55:35.000Z">2y</time>
+                                                        </div>
+                                                    </div>
+                                                    <div class="comment__display">
+                                                        <div class="row--comment__body comment__body">
+                                                            <div class="rich_content__container">
+                                                                <span class="" style="font-weight: bold;">Is the PC37X open-back or closed-back? The PC37X is an open-back headset. </span>
+                                                            </div>
+                                                        </div>
+                                                        <d class="row--comment__footer">
+                                                        <footer class="comment__footer">
+                                                            <span class="links links--action links--with_text endorsement__icon">
+                                                                <i class="icon material-icons material-icon--thumb_up endorsement__icon">thumb_up</i>
+                                                                <span class="links__text valign_with_icon">0</span>
+                                                            </span>
+                                                            <span class="links links--action links--with_text comment__reply">
+                                                                <i class="icon material-icons material-icon--reply comment__reply">reply</i>
+                                                                <span class="links__text valign_with_icon">Reply</span>
+                                                            </span>
+                                                            <div class="comment__footer--right">
+                                                                <div class="menu social_sharing_icon__menu">
+                                                                    <div class="menu__toggle">
+                                                                        <span>
+                                                                            <i class="icon material-icons material-icon--share social_sharing_icon__icon">share</i>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="tooltip__toggle favorites__tooltip">
+                                                                    <span class="links links--action links--with_text links--text_only favorite favorite--link favorite--bookmark">
+                                                                        <span class="links__text">
+                                                                            <i class="icon material-icons material-icon--bookmark_border">bookmark_border</i>
+                                                                            <span class="valign_with_icon">Save</span>
+                                                                        </span>
+                                                                    </span><!-- react-text: 4814 --><!-- /react-text -->
+                                                                </div>
+                                                                <div class="menu comment__menu_actions">
+                                                                    <div class="menu__toggle">
+                                                                        <i class="icon material-icons material-icon--more_vert">more_vert</i>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </footer>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="Menu__MenuOption communities__filter2_item dropdown__menu_item" role="menuitem" tabindex="-1">
-                                        <span class="dropdown_menu__display">Top Conversations</span>
+                                    <div class="conversation__load_more_button">
+                                        <i class="icon-down-open-big icon"></i>
+                                        <span class="links links--blue links--with_text links--text_only">
+                                            <span class="links__text"><!-- react-text: 49348 -->Load <!-- /react-text --><!-- react-text: 49349 -->2<!-- /react-text --><!-- react-text: 49350 --> more comment<!-- /react-text --><!-- react-text: 49351 -->s<!-- /react-text -->
+                                            </span>
+                                        </span>
+                                        <i class="icon-down-open-big icon"></i>
                                     </div>
-                                    <div class="Menu__MenuOption communities__filter2_item dropdown__menu_item" role="menuitem" tabindex="-1">
-                                        <span class="dropdown_menu__display">Latest Reply</span>
+                                    <div class="conversation_replies">
+                                        <div name="comment-628799">
+                                            <div class="comment__wrapper comment--reply">
+                                                <div class="content_card comment">
+                                                    
+                                                    <div class="comment__main">
+                                                        <div class="flexItem flexContainer wd_alignItems--center d_alignItems--center wt_alignItems--center nt_alignItems--center p_alignItems--center wd_flexWrap--nowrap d_flexWrap--nowrap wt_flexWrap--nowrap nt_flexWrap--nowrap p_flexWrap--nowrap row--comment_header comment_owner--vip">
+                                                            <div class="flexItem flexContainer user user--link user--default comment__owner_details">
+                                                                <a href="/profile/eksuen" class="links links--normal links--with_text links--text_only">
+                                                                    <div class="avatar__wrapper user__avatar">
+                                                                        <img alt="" class="responsive responsive_avatar" src="https://massdrop-s3.imgix.net/img_profile/mldowGZoQFKJ6tjQ78yt_20180713083357.jpg.png?auto=format&amp;fm=jpg&amp;fit=crop&amp;w=24&amp;h=24&amp;dpr=1" srcset="https://massdrop-s3.imgix.net/img_profile/mldowGZoQFKJ6tjQ78yt_20180713083357.jpg.png?auto=format&amp;fm=jpg&amp;fit=crop&amp;w=24&amp;h=24&amp;dpr=1 1x, https://massdrop-s3.imgix.net/img_profile/mldowGZoQFKJ6tjQ78yt_20180713083357.jpg.png?auto=format&amp;fm=jpg&amp;fit=crop&amp;w=24&amp;h=24&amp;dpr=2 2x, https://massdrop-s3.imgix.net/img_profile/mldowGZoQFKJ6tjQ78yt_20180713083357.jpg.png?auto=format&amp;fm=jpg&amp;fit=crop&amp;w=24&amp;h=24&amp;dpr=3 3x">
+                                                                    </div>
+                                                                </a>
+                                                                <div class="flexItem">
+                                                                    <div class="flexItem flexContainer wd_flexWrap--nowrap d_flexWrap--nowrap wt_flexWrap--nowrap nt_flexWrap--nowrap p_flexWrap--nowrap user__info--main">
+                                                                        <div class="flexItem wd_flexGrow--0 d_flexGrow--0 wt_flexGrow--0 nt_flexGrow--0 p_flexGrow--0 username__container">
+                                                                            <a href="/profile/eksuen" class="links links--normal links--with_text links--text_only username">
+                                                                                <span class="links__text">eksuen</span>
+                                                                            </a>
+                                                                        </div>
+                                                                        <span class="tag user__endorsements">697</span>
+                                                                        <button type="button" class="follow_button button button--small button--blue button--bare">
+                                                                            <i class="icon icon-follow"></i>
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="comment__misc_info_actions">
+                                                                <time class="timestamp comment__timestamp" datetime="2017-01-13T00:35:06.000Z" title="2017-01-13T00:35:06.000Z">2y</time>
+                                                            </div>
+                                                        </div>
+                                                        <div class="comment__display">
+                                                            <div class="row row--comment__body comment__body">
+                                                                <span class="tag reply_tag">
+                                                                    <div class="flexItem flexContainer user comment__owner_details">
+                                                                        <div class="flexItem">
+                                                                            <div class="flexItem flexContainer wd_flexWrap--nowrap d_flexWrap--nowrap wt_flexWrap--nowrap nt_flexWrap--nowrap p_flexWrap--nowrap user__info--main">
+                                                                                <div class="flexItem wd_flexGrow--0 d_flexGrow--0 wt_flexGrow--0 nt_flexGrow--0 p_flexGrow--0 username__container">
+                                                                                    <div class="username">funkthumb</div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </span>
+                                                                <div class="rich_content__container">
+                                                                    <span class="">You should try reading the email before going on a pointless rant. Received tracking today. Massdrop support was quick and got me shipping information well before they promised after a brief explanation of why I hadn't received correct shipping information to begin with. If everything goes accordingly the product should arrive before the promised ship date. Solid customer service despite the hick-up.
+                                                                        </span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row row--comment__footer">
+                                                                <footer class="comment__footer">
+                                                                    <span class="links links--action links--with_text endorsement__icon">
+                                                                        <i class="icon material-icons material-icon--thumb_up endorsement__icon">thumb_up</i>
+                                                                        <span class="links__text valign_with_icon">3</span>
+                                                                    </span>
+                                                                    <span class="links links--action links--with_text comment__reply">
+                                                                        <i class="icon material-icons material-icon--reply comment__reply">reply</i>
+                                                                        <span class="links__text valign_with_icon">Reply</span>
+                                                                    </span>
+                                                                    <div class="comment__footer--right">
+                                                                        <div class="menu social_sharing_icon__menu">
+                                                                            <div class="menu__toggle">
+                                                                                <span>
+                                                                                    <i class="icon material-icons material-icon--share social_sharing_icon__icon">share</i>
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="tooltip__toggle favorites__tooltip">
+                                                                            <span class="links links--action links--with_text links--text_only favorite favorite--link favorite--bookmark">
+                                                                                <span class="links__text">
+                                                                                    <i class="icon material-icons material-icon--bookmark_border">bookmark_border</i>
+                                                                                    <span class="valign_with_icon">Save</span>
+                                                                                </span>
+                                                                            </span><!-- react-text: 50951 --><!-- /react-text -->
+                                                                        </div>
+                                                                        <div class="menu comment__menu_actions">
+                                                                            <div class="menu__toggle">
+                                                                                <i class="icon material-icons material-icon--more_vert">more_vert</i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </footer>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -88,19 +277,19 @@
                     </div>
                 </div>
             </div>
-        </div>  
-
-        <div class="container container-threads">
             
         </div>
     </div>
     
     
-    </div>
-
+   
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
           
     <script>
+
         var toolbarOptions = [ 
             ['bold', 'italic','underline','strike'],
             [{'list':'ordered'},{'list':'bullet'}],
@@ -109,24 +298,13 @@
         ];
         var quill = new Quill('#editor', {
             modules: {
-                'data-placeholder': 'Add a comment...',
                 toolbar: toolbarOptions,
-                'image-tooltip': true,
-                'link-tooltip': true
+   
             },
             theme: 'snow'
         });
-
-        var customButton = document.querySelector('#custom-button');
-        customButton.addEventListener('click', function() {
-        console.log('Clicked!');
-        });
-
-
     </script>
 
-
+    
 </body>
-
-
 </html>
